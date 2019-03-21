@@ -18,3 +18,11 @@ var app = express();
  console.log("The file " + filename + " was requested.");
  next();
  }); 
+
+ // adding functionality to log the requests
+ app.get('/test.html', function (req, res) {
+ // run some server-side code
+ console.log('test.html requested');
+ // note that __dirname gives the path to the studentServer.js file
+ res.sendFile(__dirname + '/test.html');
+}); 
